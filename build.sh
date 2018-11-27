@@ -5,7 +5,7 @@ sudo apt-get install debootstrap
 curl "http://git.kali.org/gitweb/?p=packages/debootstrap.git;a=blob_plain;f=scripts/kali;hb=HEAD" > kali-debootstrap &&\
 	sudo debootstrap kali-rolling ./kali-root http://http.kali.org/kali ./kali-debootstrap &&\
 	# Import the Kali image into Docker
-sudo tar -C kali-root -c . | sudo docker import - kalilinux/kali &&\
+sudo tar -C kali-root -c . | sudo docker import - darkflib/kali-linux-rolling &&\
 	sudo rm -rf ./kali-root &&\
 	# Test the Kali Docker Image
 docker run -t -i kalilinux/kali cat /etc/debian_version &&\
