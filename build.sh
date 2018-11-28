@@ -10,5 +10,5 @@ echo deb http://http.kali.org/kali kali-rolling main contrib non-free > ./kali-r
 sudo tar -C kali-root -c . | sudo docker import - ${DOCKERREPO}
         # sudo rm -rf ./kali-root 
         # Test the Kali Docker Image
-docker run -t -i ${DOCKERREPO} cat /etc/debian_version &&\
+docker run -it --rm ${DOCKERREPO} cat /etc/debian_version &&\
         echo "Build OK" || echo "Build failed!"
