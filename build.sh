@@ -29,5 +29,5 @@ sudo tar -C kali-root -c . | sudo docker import - ${DOCKERREPO}
 docker run -it ${DOCKERREPO} /bin/bash /bootstrap.sh
 
 # Test the Kali Docker Image
-docker run -it ${DOCKERREPO} cat /etc/debian_version &&\
+docker run -it --rm ${DOCKERREPO} cat /etc/debian_version &&\
         echo "Build OK" || echo "Build failed!"
